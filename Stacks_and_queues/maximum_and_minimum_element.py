@@ -2,20 +2,19 @@ n = int(input())
 
 stack = []
 
-for i in range(n):
-    args = input().split(' ')
+for _ in range(n):
+    args = [int(x) for x in input().split(' ')]
     msg_type = args[0]
-    if msg_type == '1':
-        element = int(args[1])
+    if msg_type == 1:
+        element = args[1]
         stack.append(element)
-    elif msg_type == '2':
-        if len(stack) > 0:
+    if stack:
+        if msg_type == 2:
             stack.pop()
-    elif msg_type == '3':
-        print(max(stack))
-    elif msg_type == '4':
-        print(min(stack))
+        elif msg_type == 3:
+            print(max(stack))
+        elif msg_type == 4:
+            print(min(stack))
 
-for j in range(len(stack) - 1):
-    print(stack.pop(), end=', ')
-print(stack.pop())
+
+print(', '.join([str(x) for x in stack[::-1]]))

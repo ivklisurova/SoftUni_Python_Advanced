@@ -13,7 +13,7 @@ for i in range(n):
 for y in range(s):
     stack.pop()
 
-if len(stack)>0:
+if stack:
     if x in stack:
         print('True')
 
