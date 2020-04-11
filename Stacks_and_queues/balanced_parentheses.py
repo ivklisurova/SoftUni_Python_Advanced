@@ -2,27 +2,27 @@ text = input()
 
 stack = []
 
-is_balanced = None
+is_balanced = True
 
 for i in text:
-    if i == '(' or i == '{' or i == '[':
+    if i in '({[':
         stack.append(i)
-    if i == ')' or i == '}' or i == ']':
-        a = stack.pop()
-        if i == ')' and a == '(':
-            if is_balanced == False:
+    if i in ')}]':
+        a = stack[-1]
+        if len(stack) > 0:
+            b = stack.pop()
+            if i == ')' and b != '(':
+                is_balanced = False
                 break
-            else:
-                is_balanced = True
-        elif i == '}' and a == '{':
-            if is_balanced == False:
+            elif i == '}' and a != '{':
+                is_balanced = False
                 break
-            is_balanced = True
-        elif i == ']' and a == '[':
-            if is_balanced == False:
+            elif i == ']' and a != '[':
+                is_balanced = False
                 break
         else:
             is_balanced = False
+            break
 
 if is_balanced:
     print('YES')
