@@ -26,5 +26,4 @@ for i in text:
 if is_balanced:
     print('YES')
 else:
-
     print('NO')
