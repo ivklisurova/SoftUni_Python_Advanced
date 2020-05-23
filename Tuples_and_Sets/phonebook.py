@@ -2,17 +2,17 @@ phonebook = {}
 
 while True:
     command = input()
-    if command == 'search':
+    if command.isdigit():
         break
     name, number = command.split('-')
     if name not in phonebook:
         phonebook[name] = None
     phonebook[name] = number
 
-while True:
+n = int(command)
+
+for _ in range(n):
     searched_name = input()
-    if searched_name == 'stop':
-        break
     if searched_name in phonebook:
         print(f'{searched_name} -> {phonebook[searched_name]}')
     else:
