@@ -19,6 +19,7 @@ sum_odd = sum(odd)
 
 result = None
 
+
 if sum_even == sum_odd:
     result = odd.union(even)
 elif sum_odd > sum_even:
