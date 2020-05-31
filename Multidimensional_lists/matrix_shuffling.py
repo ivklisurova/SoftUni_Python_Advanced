@@ -2,8 +2,6 @@ rows, columns = map(int, input().split(' '))
 
 matrix = [list(input().split(' ')) for i in range(rows)]
 
-is_valid = True
-
 while True:
     args = input()
     if args == 'END':
@@ -15,9 +13,10 @@ while True:
             col1 = int(args[2])
             row2 = int(args[3])
             col2 = int(args[4])
-            len_len = len(matrix)
+
             for x in range(len(matrix)):
-                if row1 > len(matrix[x]) or col1 > (len(matrix)) or row2 > len(matrix[x]) or col2 > len(matrix):
+                if row1 >= len(matrix) or col1 >= (len(matrix[x])) or row2 >= len(matrix) or col2 >= len(matrix[x]) \
+                        or row1 < 0 or col1 < 0 or row2 < 0 or col2 < 0:
                     print('Invalid input!')
                     break
             else:
@@ -28,6 +27,8 @@ while True:
 
                 for i in matrix:
                     print(' '.join(i))
+        else:
+            print('Invalid input!')
 
     else:
         print('Invalid input!')
