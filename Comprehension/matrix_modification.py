@@ -21,4 +21,5 @@ while True:
         else:
             print('Invalid coordinates')
 
+
 [print(' '.join(map(str, i))) for i in matrix]
