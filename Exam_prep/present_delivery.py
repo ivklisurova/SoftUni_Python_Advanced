@@ -45,7 +45,6 @@ def solve(row, col, matrix):
     elif matrix[row][col] == '-' and presents_count:
         matrix[row][col] = 'S'
 
-
 def not_visited_nice_kids(matrix):
     counter_not_visited = 0
     for row in matrix:
